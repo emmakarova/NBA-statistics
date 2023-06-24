@@ -10,7 +10,7 @@ defmodule NbaTest do
     {:no_such_player, "You must follow this player to get his information"} = Nba.Client.get_single_player(client2, testPlayerId)
 
     {:ok, "Successfully followed player"} = Nba.Client.follow_player(client2, testPlayerId)
-    {:ok, "Player is already followed"} = Nba.Client.follow_player(client2, testPlayerId)
+    {:ok, "Player already exists in the main store"} = Nba.Client.follow_player(client2, testPlayerId)
 
     {:ok,  %{} = player} = Nba.Client.get_single_player(client2, testPlayerId)
 
