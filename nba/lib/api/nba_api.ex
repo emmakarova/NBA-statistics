@@ -4,7 +4,7 @@ defmodule NBA.API do
 
   def get_all_players(per_page) do
     baseUrl = "https://free-nba.p.rapidapi.com/"
-    apiKey = "315817eba3msh30857b1addef0b5p16be2fjsn94769c6bf9e0"
+    apiKey = ""
 
     response = Req.get!(baseUrl <> "players?per_page=" <> per_page, headers: [{"X-RapidAPI-Key", apiKey}])
     Jason.encode!(response.body)
@@ -12,7 +12,7 @@ defmodule NBA.API do
 
   def get_single_player(id) do
     baseUrl = "https://free-nba.p.rapidapi.com/"
-    apiKey = "315817eba3msh30857b1addef0b5p16be2fjsn94769c6bf9e0"
+    apiKey = ""
 
     response = Req.get!(baseUrl <> "players/" <> id, headers: [{"X-RapidAPI-Key", apiKey}])
 
@@ -29,7 +29,7 @@ defmodule NBA.API do
 
   def get_single_team(id) do
     baseUrl = "https://free-nba.p.rapidapi.com/"
-    apiKey = "315817eba3msh30857b1addef0b5p16be2fjsn94769c6bf9e0"
+    apiKey = ""
 
     response = Req.get!(baseUrl <> "teams/" <> id, headers: [{"X-RapidAPI-Key", apiKey}])
     Team.Data.to_team_data(Jason.encode!(response.body))

@@ -30,15 +30,15 @@ defmodule Player.Synchronizer do
   end
 
   def sync_main_store() do
-    :timer.send_interval(5000, __MODULE__, {:sync_main})
+    :timer.send_interval(7000, __MODULE__, {:sync_main})
   end
 
   def sync_client_player_store() do
-    :timer.send_interval(3000, {:sync_client_player_store})
+    :timer.send_interval(5000, {:sync_client_player_store})
   end
 
   def sync_client_team_store() do
-    :timer.send_interval(3000, {:sync_client_team_store})
+    :timer.send_interval(5000, {:sync_client_team_store})
   end
 
   def handle_info({:sync_main}, state) do
@@ -72,5 +72,5 @@ end
 # Nba.Client.get_single_player("client1","1")
 # Nba.Client.follow_player("client1", "1")
 # Nba.Client.unfollow_player("client1", "1")
-# Nba.Client.follow_team("client1", "1")
+
 # Nba.Client.start_link("client1")
